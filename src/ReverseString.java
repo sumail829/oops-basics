@@ -12,5 +12,8 @@ public class ReverseString{
         for(int i=rev.length-1;i>=0;i--){
             System.out.print(rev[i]);
         }
+        System.out.println(" ");
+        String reversed=new StringBuilder(s).reverse().toString();
+        System.out.println(reversed);
     }
 }
