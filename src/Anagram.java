@@ -8,12 +8,31 @@ public class Anagram{
         String secondLetter=scanner.next();
         char[] firstWord=firstLetter.toCharArray();
         char[] secondWord=secondLetter.toCharArray();
-        for(int i=0;i<firstWord.length;i++){
-            for(int j=0;j<secondWord.length;j++){
-                if(firstWord[i]==secondWord[j]){
+        if(firstWord.length!=secondWord.length){
+            System.out.println("Not a a anagram");
+        }
 
-                }
+        int[] count=new int[26];
+
+        for(int i=0;i<firstWord.length;i++){
+            count[firstWord[i]-'a']++;
+            count[secondWord[i]-'a']--;
+        }
+
+        boolean isAnagram=true;
+
+        for(int i=0;i<26;i++){
+            if(count[i]!=0){
+                isAnagram=false;
+                break;
             }
         }
+
+        if(isAnagram){
+            System.out.println("itss an anagram");
+        }else{
+            System.out.println("Not an anagram");
+        }
+
     }
 }
