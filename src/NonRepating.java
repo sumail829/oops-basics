@@ -5,22 +5,35 @@ public class NonRepating{
         Scanner scanner=new Scanner(System.in);
         System.out.println("Enter the word");
         String s=scanner.next();
-        char[] word=s.toCharArray();
 
+        int[] frequency=new int[256];
 
-        for(int i=0;i<word.length;i++){
-            boolean isRepeating=false;
-            int count=0;
-            for(int j=0;j<word.length;j++){
-                if(word[i]==word[j]) {
-                    count++;
-                }
+        for(int i=0;i<s.length();i++){
+            frequency[s.charAt(i)]++;
+        }
 
-            }
-            if(count==1){
-                System.out.println(word[i]);
+        for(int i=0;i<s.length();i++){
+            if(frequency[s.charAt(i)]==1){
+                System.out.println(s.charAt(i));
                 return;
             }
         }
+//        char[] word=s.toCharArray();
+//
+//
+//        for(int i=0;i<word.length;i++){
+//            boolean isRepeating=false;
+//            int count=0;
+//            for(int j=0;j<word.length;j++){
+//                if(word[i]==word[j]) {
+//                    count++;
+//                }
+//
+//            }
+//            if(count==1){
+//                System.out.println(word[i]);
+//                return;
+//            }
+//        }
     }
 }
